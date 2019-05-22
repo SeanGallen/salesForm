@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SalesAccountInputFieldComponent } from './sales-account-input-field/sales-account-input-field.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SalesAccountInputFieldComponent
   ],
   imports: [
     BrowserModule,
