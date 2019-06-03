@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'sales-account-input-field',
@@ -11,24 +13,32 @@ export class SalesAccountInputFieldComponent implements OnInit {
    registered = false;
    submitted = false;
    userForm: FormGroup;
+   guid: string;
+   serviceErrors:any = {};
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
+    this.http.get('/api/v1/generate_uid').subscribe( (data:any) => {
+      this.guid = data.guid;
+    }, error => {
+      console.log("There was an error in obtain the guid from the server: ", error);
+    });
+   }
   
 
   invalidFirstName() {
-     return (this.submitted && this.userForm.controls.first_name.errors != null);
+     return (this.submitted && this.serviceErrors.first_name !== null || this.userForm.controls.first_name.errors != null);
   }
   invalidLastName() {
-     return (this.submitted && this.userForm.controls.last_name.errors != null);
+     return (this.submitted && this.serviceErrors.last_name !== null || this.userForm.controls.last_name.errors != null);
   }
   invalidCompanyName() {
-     return (this.submitted && this.userForm.controls.company_name.errors != null);
+     return (this.submitted && this.serviceErrors.company_name !== null || this.userForm.controls.company_name.errors != null);
   }
   invalidEmail() {
-     return (this.submitted && this.userForm.controls.email.errors != null);
+     return (this.submitted && this.serviceErrors.email !== null || this.userForm.controls.email.errors != null);
   }
   invalidAddress() {
-     return (this.submitted && this.userForm.controls.address.errors != null);
+     return (this.submitted && this.serviceErrors.address !== null || this.userForm.controls.address.errors != null);
   }
   ngOnInit() {
     this.userForm = this.formBuilder.group({
@@ -39,14 +49,25 @@ export class SalesAccountInputFieldComponent implements OnInit {
          address: ['', Validators.required]
     });
   }
+  
   onSubmit()
   {
     this.submitted = true;
- 
+   
     if(this.userForm.invalid == true){
       return;
     }
-    else{
+    else
+    {
+      let data: any = Object.assign({guid: this.guid}, this.userForm.value);
+
+      this.http.post('api/v1/company', data).subscribe((data:any) => {
+        let path = '/user/' + data.company.uid;
+        this.router.navigate([path]);
+      }, error => 
+    {
+        this.serviceErrors = error.error.error;
+    });
       this.registered = true;
     }
   }

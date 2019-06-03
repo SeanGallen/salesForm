@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SalesAccountInputFieldComponent } from './sales-account-input-field/sales-account-input-field.component';
 import { CompanyDetailsDispayComponent } from './company-details-dispay/company-details-dispay.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CompanyDetailsDispayComponent } from './company-details-dispay/company-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

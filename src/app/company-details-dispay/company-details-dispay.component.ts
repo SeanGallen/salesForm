@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyDetailsModel } from '../models/company-information-model';
+import { HttpClient } from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'company-details-dispay',
@@ -18,9 +20,18 @@ export class CompanyDetailsDispayComponent implements OnInit {
       email: "email@email.com", 
       address: "123 Pine Lane"
     });
-  constructor() { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+
+  private subscriber: any;
 
   ngOnInit() {
+    this.subscriber = this.route.params.subscribe(params => {
+	       
+      this.http.get('/api/v1/company/' + params.uid).subscribe((data:any) => {
+
+     this.company = new CompanyDetailsModel(data.customer);
+     });
+   });
   }
 
 }
