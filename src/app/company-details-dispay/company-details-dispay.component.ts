@@ -13,7 +13,7 @@ export class CompanyDetailsDispayComponent implements OnInit {
 
   company: CompanyDetailsModel = new CompanyDetailsModel(
    {
-      customerUid: "cust2dsa12dsa", 
+      uid: "cust2dsa12dsa", 
       company_name: "Pear",
       first_name: "John", 
       last_name: "Doe", 
@@ -29,7 +29,7 @@ export class CompanyDetailsDispayComponent implements OnInit {
 	       
       this.http.get('/api/v1/company/' + params.uid).subscribe((data:any) => {
 
-     this.company = new CompanyDetailsModel(data.customer);
+     this.company = new CompanyDetailsModel(data.company);
      });
    });
   }

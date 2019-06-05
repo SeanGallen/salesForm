@@ -1,8 +1,14 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-	<div class="form-group" [ngClass]="{ 'has-error': invalidFirstName() }">
+	<!-- <div class="form-group" [ngClass]="{ 'has-error': invalidFirstName() }">
 		<label for="first_name" class="control-label">First Name</label>
 		<input type="text" formControlName="first_name" class="form-control" id="first_name" name="first_name" placeholder="Martin">
     <p *ngIf="invalidFirstName()" id="first_name_error" class="help-block">{{this.serviceErrors.first_name || 'Need to fill out the First Name.' }}</p>
+	</div> -->
+
+	<div class="form-group" [ngClass]="{ 'has-error': invalidFirstName() }"> 
+		<label for="first_name" class="control-label">First Name</label>
+		<input type="text" formControlName="first_name" class="form-control" id="first_name" name="first_name" placeholder="Martin">
+		<p *ngIf="invalidFirstName()" id="first_name_error" class="help-block">{{this.serviceErrors.first_name || 'Invalid first name.'}}</p>
 	</div>
 
 	<div class="form-group" [ngClass]="{ 'has-error': invalidLastName() }">
@@ -17,11 +23,11 @@
     <p *ngIf="invalidCompanyName()" id="company_name_error" class="help-block">{{this.serviceErrors.company_name || 'Need to fill out the Company\'s Name.' }}</p>
 	</div>
 
-	<div class="form-group" [ngClass]="{ 'has-error': invalidEmail() }">
+	<!-- <div class="form-group" [ngClass]="{ 'has-error': invalidEmail() }">
 		<label for="email" class="control-label">E-mail</label>
 		<input type="text" formControlName="email" class="form-control" id="email" name="email" placeholder="your@email.com">
     <p *ngIf="invalidEmail()" id="email_error" class="help-block">{{this.serviceErrors.email || 'Need to fill out the E-mail.' }}</p>
-	</div>
+	</div> -->
 
 	<div class="form-group" [ngClass]="{ 'has-error': invalidAddress() }">
 		<label for="address" class="control-label">Address</label>

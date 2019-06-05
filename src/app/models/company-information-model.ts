@@ -1,7 +1,7 @@
 export class CompanyDetailsModel
 {
     guid: string;
-	customerUid: string;
+	uid: string;
     
     company_name: string;
 	first_name: string;

@@ -26,43 +26,43 @@ export class SalesAccountInputFieldComponent implements OnInit {
   
 
   invalidFirstName() {
-     return (this.submitted && this.serviceErrors.first_name !== null || this.userForm.controls.first_name.errors != null);
+     return (this.submitted && (this.serviceErrors.first_name !== null || this.userForm.controls.first_name.errors != null));
   }
   invalidLastName() {
-     return (this.submitted && this.serviceErrors.last_name !== null || this.userForm.controls.last_name.errors != null);
+     return (this.submitted && (this.serviceErrors.last_name !== null || this.userForm.controls.last_name.errors != null));
   }
   invalidCompanyName() {
-     return (this.submitted && this.serviceErrors.company_name !== null || this.userForm.controls.company_name.errors != null);
+     return (this.submitted && (this.serviceErrors.company_name !== null || this.userForm.controls.company_name.errors != null));
   }
   invalidEmail() {
-     return (this.submitted && this.serviceErrors.email !== null || this.userForm.controls.email.errors != null);
+     return (this.submitted && (this.serviceErrors.email !== null || this.userForm.controls.email.errors != null));
   }
   invalidAddress() {
-     return (this.submitted && this.serviceErrors.address !== null || this.userForm.controls.address.errors != null);
+     return (this.submitted && (this.serviceErrors.address !== null || this.userForm.controls.address.errors != null));
   }
   ngOnInit() {
     this.userForm = this.formBuilder.group({
-         first_name: ['', Validators.required],
-         last_name: ['', Validators.required],
-         company_name: ['', Validators.required],
-         email: ['', Validators.required, Validators.email],
-         address: ['', Validators.required]
+        first_name: ['', [Validators.required, Validators.maxLength(50)]],
+  		  last_name: ['', [Validators.required, Validators.maxLength(50)]],
+  		 // email: ['', [Validators.required, Validators.email, Validators.maxLength(75)]],
+        company_name: ['', [Validators.required, Validators.maxLength(50)]],
+        address: ['', [Validators.required, Validators.maxLength(50)]],
     });
   }
   
   onSubmit()
   {
     this.submitted = true;
-   
+    
     if(this.userForm.invalid == true){
       return;
     }
     else
     {
       let data: any = Object.assign({guid: this.guid}, this.userForm.value);
-
+      console.log('test');
       this.http.post('api/v1/company', data).subscribe((data:any) => {
-        let path = '/user/' + data.company.uid;
+        let path = '/company/' + data.company.uid;
         this.router.navigate([path]);
       }, error => 
     {
