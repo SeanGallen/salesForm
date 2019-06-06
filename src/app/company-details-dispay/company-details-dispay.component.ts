@@ -28,7 +28,7 @@ export class CompanyDetailsDispayComponent implements OnInit {
     this.subscriber = this.route.params.subscribe(params => {
 	       
       this.http.get('/api/v1/company/' + params.uid).subscribe((data:any) => {
-
+        
      this.company = new CompanyDetailsModel(data.company);
      });
    });

@@ -60,8 +60,9 @@ export class SalesAccountInputFieldComponent implements OnInit {
     else
     {
       let data: any = Object.assign({guid: this.guid}, this.userForm.value);
-      console.log('test');
+      console.log("out ", data);
       this.http.post('api/v1/company', data).subscribe((data:any) => {
+        console.log("sdf: ", data);
         let path = '/company/' + data.company.uid;
         this.router.navigate([path]);
       }, error => 
