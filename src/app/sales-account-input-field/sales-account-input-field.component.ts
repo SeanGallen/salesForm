@@ -44,7 +44,7 @@ export class SalesAccountInputFieldComponent implements OnInit {
     this.userForm = this.formBuilder.group({
         first_name: ['', [Validators.required, Validators.maxLength(50)]],
   		  last_name: ['', [Validators.required, Validators.maxLength(50)]],
-  		 // email: ['', [Validators.required, Validators.email, Validators.maxLength(75)]],
+  		  email: ['', [Validators.required, Validators.email, Validators.maxLength(75)]],
         company_name: ['', [Validators.required, Validators.maxLength(50)]],
         address: ['', [Validators.required, Validators.maxLength(50)]],
     });
@@ -60,15 +60,13 @@ export class SalesAccountInputFieldComponent implements OnInit {
     else
     {
       let data: any = Object.assign({guid: this.guid}, this.userForm.value);
-      console.log("out ", data);
       this.http.post('api/v1/company', data).subscribe((data:any) => {
-        console.log("sdf: ", data);
         let path = '/company/' + data.company.uid;
         this.router.navigate([path]);
       }, error => 
-    {
-        this.serviceErrors = error.error.error;
-    });
+      {
+          this.serviceErrors = error.error.error;
+      });
       this.registered = true;
     }
   }
