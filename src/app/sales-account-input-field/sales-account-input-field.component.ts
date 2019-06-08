@@ -17,7 +17,7 @@ export class SalesAccountInputFieldComponent implements OnInit {
    serviceErrors:any = {};
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
-    this.http.get('/api/v1/generate_uid').subscribe( (data:any) => {
+    this.http.get('http://localhost:3000/api/v1/generate_uid').subscribe( (data:any) => {
       this.guid = data.guid;
     }, error => {
       console.log("There was an error in obtain the guid from the server: ", error);
@@ -60,7 +60,7 @@ export class SalesAccountInputFieldComponent implements OnInit {
     else
     {
       let data: any = Object.assign({guid: this.guid}, this.userForm.value);
-      this.http.post('api/v1/company', data).subscribe((data:any) => {
+      this.http.post('http://localhost:3000/api/v1/company', data).subscribe((data:any) => {
         let path = '/company/' + data.company.uid;
         this.router.navigate([path]);
       }, error => 
