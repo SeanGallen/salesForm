@@ -5,6 +5,6 @@ Need to add
 - [X] Electron
 - [X] Proper Hook up to Backend
 - [X] Clean up and Add features back in.
-- [ ] Bug list (promise issue with Electron)
+- [X] Bug list (promise issue with Electron)
 - [ ] Login Page
 - [ ] Maybe Authorization
