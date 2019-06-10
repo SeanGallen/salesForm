@@ -27,10 +27,11 @@ export class CompanyDetailsDispayComponent implements OnInit {
   ngOnInit() {
     this.subscriber = this.route.params.subscribe(params => {
 	       
-      this.http.get('/api/v1/company/' + params.uid).subscribe((data:any) => {
-        
+      this.http.get('http://localhost:3000/api/v1/company/' + params.uid).subscribe((data:any) => {
      this.company = new CompanyDetailsModel(data.company);
-     });
+     },
+     error => console.log('company-details get', error)
+    );
    });
   }
 
