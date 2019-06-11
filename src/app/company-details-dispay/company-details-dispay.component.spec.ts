@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CompanyDetailsDispayComponent } from './company-details-dispay.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('CompanyDetailsDispayComponent', () => {
   let component: CompanyDetailsDispayComponent;
@@ -10,8 +10,17 @@ describe('CompanyDetailsDispayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [ CompanyDetailsDispayComponent ]
+      
+      imports: [HttpClientTestingModule], 
+      declarations: [ CompanyDetailsDispayComponent ],
+      providers: [
+        { 
+          provide: ActivatedRoute, 
+          useValue: {
+            params: of({ get: (key) => 'value' })
+          }
+      }
+      ]
     })
     .compileComponents();
   }));
