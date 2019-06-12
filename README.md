@@ -7,5 +7,7 @@ Need to add
 - [X] Clean up and Add features back in.
 - [X] Bug list (promise issue with Electron)
 - [X] Move files in Folders (better structure)
+- [X] Tests
+- [ ] More Tests
 - [ ] Login Page
 - [ ] Maybe Authorization
