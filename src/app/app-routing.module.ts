@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SalesAccountInputFieldComponent } from './sales-account-input-field/sales-account-input-field.component';
-import { CompanyDetailsDispayComponent } from './company-details-dispay/company-details-dispay.component';
+import { SalesAccountInputFieldComponent } from './component/sales-account-input-field/sales-account-input-field.component';
+import { CompanyDetailsDispayComponent } from './component/company-details-dispay/company-details-dispay.component';
 
 const routes: Routes = [
   {

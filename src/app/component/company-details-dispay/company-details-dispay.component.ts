@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyDetailsModel } from '../models/company-information-model';
+import { CompanyDetailsModel } from '../../model/company-information-model';
 import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from '@angular/router';
 

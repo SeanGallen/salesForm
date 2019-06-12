@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SalesAccountInputFieldComponent } from './sales-account-input-field/sales-account-input-field.component';
-import { CompanyDetailsDispayComponent } from './company-details-dispay/company-details-dispay.component';
+import { SalesAccountInputFieldComponent } from './component/sales-account-input-field/sales-account-input-field.component';
+import { CompanyDetailsDispayComponent } from './component/company-details-dispay/company-details-dispay.component';
 import { HttpClientModule } from '@angular/common/http';
 
 

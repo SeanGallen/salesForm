@@ -6,5 +6,6 @@ Need to add
 - [X] Proper Hook up to Backend
 - [X] Clean up and Add features back in.
 - [X] Bug list (promise issue with Electron)
+- [X] Move files in Folders (better structure)
 - [ ] Login Page
 - [ ] Maybe Authorization
