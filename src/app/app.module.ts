@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SalesAccountInputFieldComponent } from './component/sales-account-input-field/sales-account-input-field.component';
 import { CompanyDetailsDispayComponent } from './component/company-details-dispay/company-details-dispay.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './component/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SalesAccountInputFieldComponent,
-    CompanyDetailsDispayComponent
+    CompanyDetailsDispayComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
