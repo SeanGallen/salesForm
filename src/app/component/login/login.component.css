@@ -1,4 +1,17 @@
 form{ 
     float: right;
-    margin: 0px 100px 0px 0px;
+    margin: 20px 100px 0px 0px;
+}
+
+input {
+    font-size: 2em;
+}
+
+img{
+    width: 30em;
+    height: 20em;
+    margin: 100px 100px 10px 100px;
+}
+.btnDiv {
+    float: right;
 }
