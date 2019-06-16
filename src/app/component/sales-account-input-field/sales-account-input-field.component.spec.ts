@@ -42,7 +42,6 @@ describe('SalesAccountInputFieldComponent', () => {
   });
 
   it('should have a last name label', () => {
-    console.log(compiled.querySelectorAll('label').item(1));
     expect(compiled.querySelectorAll('label').item(1).textContent).toContain('Last Name');
   });
 
