@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 describe('SalesAccountInputFieldComponent', () => {
   let component: SalesAccountInputFieldComponent;
   let fixture: ComponentFixture<SalesAccountInputFieldComponent>;
+  let compiled: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -29,9 +30,32 @@ describe('SalesAccountInputFieldComponent', () => {
     fixture = TestBed.createComponent(SalesAccountInputFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a first name label', () => {
+    expect(compiled.querySelector('label').textContent).toContain('First Name');
+  });
+
+  it('should have a last name label', () => {
+    console.log(compiled.querySelectorAll('label').item(1));
+    expect(compiled.querySelectorAll('label').item(1).textContent).toContain('Last Name');
+  });
+
+  it('should have a company name label', () => {
+    expect(compiled.querySelectorAll('label').item(2).textContent).toContain('Company\'s Name');
+  });
+
+  it('should have a email label', () => {
+    expect(compiled.querySelectorAll('label').item(3).textContent).toContain('Email');
+  });
+
+  it('should have a address label', () => {
+    expect(compiled.querySelectorAll('label').item(4).textContent).toContain('Address');
+  });
+
 });
