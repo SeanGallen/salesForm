@@ -51,7 +51,6 @@ describe('CompanyDetailsDispayComponent', () => {
   });
 
   it('should have a last name label', () => {
-    console.log(compiled.querySelectorAll('label').item(1));
     expect(compiled.querySelectorAll('label').item(3).textContent).toContain('Last Name');
   });
 
