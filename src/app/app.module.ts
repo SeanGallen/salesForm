@@ -8,6 +8,7 @@ import { SalesAccountInputFieldComponent } from './component/sales-account-input
 import { CompanyDetailsDispayComponent } from './component/company-details-dispay/company-details-dispay.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoginComponent } from './component/login/login.component';
     AppComponent,
     SalesAccountInputFieldComponent,
     CompanyDetailsDispayComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
