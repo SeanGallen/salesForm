@@ -11,5 +11,6 @@ Need to add
 - [ ] More Tests
 - [X] Login Page
     - [ ] Add Functionality
+- [X] Add Sign Up page
 - [ ] Improve CSS
-- [ ] Maybe Authorization
+- [ ]  Authorization
