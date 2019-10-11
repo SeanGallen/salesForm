@@ -3,7 +3,7 @@ Fun Angular Frontend for a small business.
 
 Need to add 
 - [X] Electron
-- [X] Proper Hook up to Backend
+- [] Proper Hook up to Backend  ~Need to look into it again.
 - [X] Clean up and Add features back in.
 - [X] Bug list (promise issue with Electron)
 - [X] Move files in Folders (better structure)
