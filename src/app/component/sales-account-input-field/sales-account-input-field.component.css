@@ -1,0 +1,8 @@
+.vertical-align {
+    display: grid;
+    align-items: base;
+}
+
+.button {
+    bottom: 2em;
+}
