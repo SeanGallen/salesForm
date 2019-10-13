@@ -1,8 +1,12 @@
 .vertical-align {
     display: grid;
     align-items: base;
+    margin-top: 3em;
+    margin-right:auto;
+    width:960px
 }
 
-.button {
-    bottom: 2em;
+.submitButton {
+    margin-top: 1em;
+    padding-left: 16em;
 }
