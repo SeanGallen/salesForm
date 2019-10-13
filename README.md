@@ -14,4 +14,4 @@ Need to add
 - [X] Add Sign Up page
 - [ ] Improve CSS
 - [ ]  Authorization
-- [ ] Fix Sales Submit postion.
+- [x] Fix Sales Submit postion.
