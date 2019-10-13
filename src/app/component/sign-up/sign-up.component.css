@@ -1,0 +1,12 @@
+.vertical-align {
+    display: grid;
+    margin-top: 3em;
+    width:960px;
+    position: absolute;
+    left: 37%;
+}
+
+.submitButton {
+    margin-top: 1em;
+    padding-left: 16em;
+}

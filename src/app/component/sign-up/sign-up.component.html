@@ -1,21 +1,23 @@
 <form [formGroup]="signUpForm" class="formStyle" (ngSubmit)="onSubmit()">
-  <div class="form-group"> 
-    <label for="mobile_number_Email" class="control-label">Mobile Number or Email</label>
-    <input type="text" formControlName="mobile_number_Email" class="form-control" id="mobile_number_Email" name="mobile_number_Email">
-  </div>
-  <div class="form-group"> 
-    <label for="full_name" class="control-label">Full Name</label>
-    <input type="text" formControlName="full_name" class="form-control" id="full_name" name="full_name">
-  </div>
-  <div class="form-group"> 
-    <label for="user_name" class="control-label">Username</label>
-    <input type="text" formControlName="user_name" class="form-control" id="user_name" name="user_name">
-  </div>
-  <div class="form-group" > 
-    <label for="password" class="control-label">Password</label>
-    <input type="password" formControlName="password" class="form-control" id="password" name="password"> 
-  </div>
-  <div class="form-group btnDiv has-error">
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</div>
+  <div class="vertical-align"> 
+    <div class="form-group" class="col-xs-4"> 
+      <label for="mobile_number_Email" class="control-label">Mobile Number or Email</label>
+      <input type="text" formControlName="mobile_number_Email" class="form-control" id="mobile_number_Email" name="mobile_number_Email">
+    </div>
+    <div class="form-group" class="col-xs-4"> 
+      <label for="full_name" class="control-label">Full Name</label>
+      <input type="text" formControlName="full_name" class="form-control" id="full_name" name="full_name">
+    </div>
+    <div class="form-group"class="col-xs-4"> 
+      <label for="user_name" class="control-label">Username</label>
+      <input type="text" formControlName="user_name" class="form-control" id="user_name" name="user_name">
+    </div>
+    <div class="form-group" class="col-xs-4"> 
+      <label for="password" class="control-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="password" name="password"> 
+    </div>
+    <div class="form-group btnDiv has-error" class="submitButton">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>  
 </form> 

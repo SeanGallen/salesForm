@@ -3,16 +3,3 @@
     text-align: center;
 }
 
-.signUp {
-    position: absolute;
-    left: 70em;
-    top: 25em;
-    z-index: 1;
-}
-
-.or{
-    position: absolute;
-    left: 71em;
-    top: 22em;
-    z-index: 1;
-}
