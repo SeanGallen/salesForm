@@ -12,6 +12,9 @@ Need to add
 - [X] Login Page
     - [ ] Add Functionality
 - [X] Add Sign Up page
-- [ ] Improve CSS
+- [] Improve CSS
+   - [x] Fix Sales Submit postion.
+   - [x] Improved Sign Up position.
+   - []  Reuse the same CSS in one file. 
 - [ ]  Authorization
 - [x] Fix Sales Submit postion.
